@@ -499,7 +499,10 @@
                 alert('請至少選擇一個題庫來源！');
                 return;
             }
-            
+            // 如果題庫大於20題，隨機抽選20題
+            if (filteredQuestions.length > 20) {
+                filteredQuestions = shuffleArray(filteredQuestions).slice(0, 20);
+            }
             score = 0; 
             answered = 0;
             correctIds = [];
@@ -897,3 +900,4 @@
     </script>
 </body>
 </html>
+
